@@ -1,4 +1,4 @@
-# brain.dump
+# Brain.dump
 A collection of development notes, coding snippets and knowledge.
 
 ## Programming Language
