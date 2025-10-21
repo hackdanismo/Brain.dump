@@ -9,8 +9,28 @@
 ```shell
 $ brew install ruby
 
-# Display the version of Ruby installed
+# Display the version of Ruby is installed
 $ ruby -v
+# Check which version of RubyGems are installed
+$ gem -v
+```
+
+`RubyGems` is the package manager for `Ruby`. Libraries that are installed are called `gems`.
+
+To install `Ruby on Rails` (`Rails`), the `Bundler` gem needs to be installed:
+
+```shell
+$ gem install bundler
+# Check which version of the Bundler is installed
+$ bundle -v
+```
+
+Once installed, install `Ruby on Rails`:
+
+```shell
+$ gem install rails
+# Check which version of Rails is installed
+$ rails -v
 ```
 
 ## Write the first Ruby script
