@@ -37,3 +37,5 @@ jobs:
       - name: Say hello
         run: echo "Hello, world!"
 ```
+
+The settings in the repo need to be updated to publish to `GitHub Pages`.
