@@ -1,4 +1,22 @@
 # Svelte
+`Svelte` is a frontend framework - similar to `React` or `Vue` - but instead of running in the browser, `Svelte` compiles components at `built time`. This results in small, fast applications with no virtual DOM.
+
++ The code or components are written in `.svelte` files (`HTML`, `CSS` and `JavaScript/TypeScript`) will be compiled.
++ `Svelte` compiles the code into efficient `JavaScript`.
+
+This results in small, fast applications with no `virtual DOM`. 
+
+`SvelteKit` is the full-stack application framework built on top of `Svelte`. `SvelteKit` handles the things you need for real-world apps:
+
++ `Routing`
++ `Server-side rendering (SSR)`
++ `Data loading (server + client)`
++ `API routes`
++ `Adapters for deployment (Vercel, Netlify, Node, etc.)`
++ `File-based routing and layouts`
++ `Static site generation (SSG)`
+
+It’s like what `Next.js` is for `React` or `Nuxt` is for `Vue`.
 
 + [Setup](#setup)
 + [Homepage](#homepage)
@@ -7,7 +25,7 @@
   + [Adding Components](#adding-components)
 
 ## Setup
-Setup a `Svelte` app using the terminal command:
+Setup a `Svelte` app using the terminal command. This will also setup `SvelteKit`:
 
 ```shell
 $ npx sv create
