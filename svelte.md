@@ -21,6 +21,7 @@ It’s like what `Next.js` is for `React` or `Nuxt` is for `Vue`.
 + [Setup](#setup)
 + [Homepage](#homepage)
   + [Additional Pages](#additional-pages)
++ [Styling](#styling)
 + [Components](#components)
   + [Adding Components](#adding-components)
 
@@ -91,6 +92,32 @@ An example page:
 <h1>Blog Post: {slug}</h1>
 ```
 
+## Styling
+Global CSS - like `reset.css` or `normalize.css` - are added to the `src/app.css` file. This is then imported into the global layout file - `src/routes/+layout.svelte` - this file wraps every page in `SvelteKit` and applies the same layout to all pages by default. It only needs to be imported once and it applies globally across the app.
+
+```typescript
+<script lang="ts">
+	import '../app.css';
+</script>
+```
+
+Here is the default `src/app.css` stylesheet:
+
+```css
+@import 'tailwindcss';
+```
+
+Custom CSS code, such as styles for a reset, can be added here.
+
+If using `Tailwind CSS` or another framework, files can be imported here in the `src/app.css` file:
+
+```css
+@import 'modern-normalize';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 ## Components
 A `Component` in `Svelte` is a `.svelte` file containing: markup (`HTML`), styles (`CSS`) and logic (`<script>`). A component can be imported and reused by other components and pages, similar to components in `React`. In `SvelteKit`, components live in `src/lib/` usually in a subfolder like: `src/lib/components/`.
 
@@ -144,6 +171,12 @@ Components can be added to the `src/lib/components/` subfolder and named with th
 >
     <slot />    <!-- Allows any content to be passed in -->
 </button>
+```
+
+It is worth noting that in non-TypeScript files, the `lang` attribute on the `<script>` tag is not needed:
+
+```javascript
+<script> ... </script>
 ```
 
 This component can then be imported into pages and/or components, such as: `src/routes/+page.svelte`:
