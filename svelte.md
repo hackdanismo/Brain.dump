@@ -18,6 +18,8 @@ This results in small, fast applications with no `virtual DOM`.
 
 It’s like what `Next.js` is for `React` or `Nuxt` is for `Vue`.
 
+`Svelte` uses `Vite` under the hood.
+
 + [Setup](#setup)
 + [Homepage](#homepage)
   + [Additional Pages](#additional-pages)
