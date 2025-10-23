@@ -14,3 +14,10 @@ Once setup has been completed in the CLI inside the terminal, the packages/depen
 ```shell
 $ npm run dev -- --open
 ```
+
+The initial app structure:
+
++ `src/routes/+page.svelte` - your home page
++ `src/routes/+layout.svelte` - shared layout (header/footer)
++ `src/lib/` - reusable components
++ `static/` - public assets
