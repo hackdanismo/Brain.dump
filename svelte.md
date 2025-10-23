@@ -3,6 +3,7 @@
 + [Setup](#setup)
 + [Homepage](#homepage)
   + [Additional Pages](#additional-pages)
++ [Components](#components)
 
 ## Setup
 Setup a `Svelte` app using the terminal command:
@@ -69,4 +70,18 @@ An example page:
 </script>
 
 <h1>Blog Post: {slug}</h1>
+```
+
+## Components
+A `Component` in `Svelte` is a `.svelte` file containing: markup (`HTML`), styles (`CSS`) and logic (`<script>`). A component can be imported and reused by other components and pages, similar to components in `React`. In `SvelteKit`, components live in `src/lib/` usually in a subfolder like: `src/lib/components/`.
+
+Anything in `src/lib/` can be imported with the `$lib` alias. This alias is built into `SvelteKit` automatically — no config needed. This prevents the need to have ugly relative imports.
+
+```
+src/
+  lib/
+    components/
+      Button.svelte
+      Card.svelte
+      Navbar.svelte
 ```
