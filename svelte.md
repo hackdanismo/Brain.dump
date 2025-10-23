@@ -4,6 +4,7 @@
 + [Homepage](#homepage)
   + [Additional Pages](#additional-pages)
 + [Components](#components)
+  + [Adding Components](#adding-components)
 
 ## Setup
 Setup a `Svelte` app using the terminal command:
@@ -84,4 +85,66 @@ src/
       Button.svelte
       Card.svelte
       Navbar.svelte
+```
+
+### Adding Components
+Components can be added to the `src/lib/components/` subfolder and named with the name of the component followed by the `.svelte` file extension (e.g. `Button.svelte`). Here is an example `Button` component using `Tailwind CSS` classes for styling:
+
+```typescript
+// src/lib/components/Button.svelte
+
+<script lang="ts">
+    // Props: external values passed from the parent
+    export let type: 'button' | 'submit' | 'reset' = 'button';
+    export let variant: 'primary' | 'secondary' | 'danger' = 'primary';
+    export let disabled: boolean = false;
+    export let className: string = '';  // optional extra classes
+
+    // Event forwarding: allows `on:click` on this component to bubble up
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    function handleClick(event: MouseEvent) {
+        if (!disabled) {
+            dispatch('click', event);
+        }
+    }
+</script>
+
+<!-- Button markup -->
+<button
+    {type}
+    on:click={handleClick}
+    disabled={disabled}
+    class={`px-4 py-2 rounded-lg font-semibold transition-colors duration-150
+        ${variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700'}
+        ${variant === 'secondary' && 'bg-gray-200 text-gray-800 hover:bg-gray-300'}
+        ${variant === 'danger' && 'bg-red-500 text-white hover:bg-red-600'}
+        ${disabled && 'opacity-50 cursor-not-allowed'}
+        ${className}`
+    }
+>
+    <slot />    <!-- Allows any content to be passed in -->
+</button>
+```
+
+This component can then be imported into pages and/or components, such as: `src/routes/+page.svelte`:
+
+```typescript
+// src/routes/+page.svelte
+
+<script lang="ts">
+    // Import the Button component using the $lib alias
+    import Button from '$lib/components/Button.svelte';
+
+    function save() {
+        alert('Saved');
+    }
+</script>
+
+<h1 class="text-2xl font-bold mb-4">Buttons Demo</h1>
+
+<Button on:click={save}>Save</Button>
+<Button variant="secondary" on:click={() => alert('Cancelled')}>Cancel</Button>
+<Button variant="danger" disabled>Delete</Button>
 ```
