@@ -7,6 +7,9 @@ A collection of development notes, coding snippets and knowledge.
 
 ## Libraries & Frameworks
 
+### JavaScript/TypeScript
++ [Svelte](svelte.md)
+
 ### Python
 + [Flask](flask.md)
 
