@@ -1,9 +1,16 @@
 # Git
 
 + [GitHub](#github)
+  + [Profile](#profile)
   + [GitHub Actions](#github-actions)
 
 ## GitHub
+
+### Profile
+To add a profile `README` on the homepage of the `GitHub account`:
+
++ Create a repo with the same name as the account. For example, if the `GitHub` account is named `hackdanismo`, create a repo also named `hackdanismo`. This should be `public`.
++ Add a `README.md` file into this repo. This will be the `README` that appears on the main part of the account page.
 
 ### GitHub Actions
 When creating a new `GitHub` repo with a `README.md` file, GitHub only creates the markdown file and does not create a `.github` directory. Optionally, a licence and a `.gitignore` file can be added. To create the `.github` directory containing a `workflows` folder, where `GitHub Actions` can be created:
