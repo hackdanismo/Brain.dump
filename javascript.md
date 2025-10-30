@@ -3,6 +3,7 @@
 + [Functions](#functions)
     + [Parameters](#parameters)
 + [Loops](#loops)
++ [Try Catch](#try-catch)
 
 ## Functions
 A `function` is a reusable code block. In `JavaScript` a function is defined using the `function` keyword.
@@ -91,5 +92,33 @@ const urls = [
 // Using a for loop to loop over each of the URLs in the array.
 for (const i of urls) {
     console.log(i);
+}
+```
+
+## Try Catch
+The `try...catch` is an important tool in `JavaScript` and is used to handle errors gracefully. If no errors occur, the code in the `try` block will be executed and the `catch` will be skipped. Examples as to when to use `try...catch`:
+
++ Prevents the app from crashing due to unexpected errors.
++ Handle specific errors gracefully, like showing an error message.
++ Works with `async/await` for handling rejected `Promises`.
++ Used for: `network requests`, `parsing JSON or user data`, `calling third party libraries and/or APIs`, or `file or database operations`.
+
+```javascript
+try {
+    // Code that may throw an error
+} catch (error) {
+    // Code that will run if an error occurs
+}
+```
+
+The `finally` keyword can also be used which runs regardless of errors. It is useful for cleanup operations such as: closing files or stopping a loading spinner.
+
+```javascript
+try {
+    // Code that may throw an error
+} catch (error) {
+    // Code that will run if an error occurs
+} finally {
+    // This code will always run regardless of an error or not
 }
 ```
