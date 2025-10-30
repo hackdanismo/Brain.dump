@@ -2,6 +2,7 @@
 A collection of development notes, coding snippets and knowledge.
 
 ## Programming Language
++ [JavaScript](javascript.md)
 + [Python](python.md)
 + [Ruby](ruby.md)
 
