@@ -9,6 +9,7 @@ A collection of development notes, coding snippets and knowledge.
 ## Libraries & Frameworks
 
 ### JavaScript/TypeScript
++ [Axios](axios.md)
 + [Svelte](svelte.md)
 
 ### Python
